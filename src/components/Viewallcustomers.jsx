@@ -20,7 +20,7 @@ const Viewallcustomers = () => {
   });
   
 
-  const API = axios.create({baseURL:"https://banking-app-backend-seven.vercel.app/api"});
+  const API = axios.create({baseURL:"https://corsanywhere.herokuapp.com/https://banking-app-backend-seven.vercel.app/api"});
   
 
   const fetchdetails = () => API.get("/details");
