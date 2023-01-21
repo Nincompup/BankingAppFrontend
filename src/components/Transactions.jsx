@@ -16,7 +16,7 @@ const Transactions = () => {
         const { data } = await fetchdetails();
         setTrans(data);
         //    console.log("hello");
-
+        //    console.log(data);
       } catch (rishav) {
         console.log(rishav);
       }
@@ -24,7 +24,7 @@ const Transactions = () => {
   
     useEffect(() => {
       TransactionDetails();
-    }, []);
+    });
 
 
 

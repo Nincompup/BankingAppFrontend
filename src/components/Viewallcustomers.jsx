@@ -1,23 +1,27 @@
 import React from "react";
 import axios from "axios";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import "./css/allcustomers.css";
 
 import Navbar from "./Navbar";
 
+
 const Viewallcustomers = () => {
+  
   const [users, setUsers] = useState([]);
-  const [open, setOpen] = useState(false);
-  const [accno, setAccno] = useState();
-  const [amount, setAmount] = useState();
+  // const [open, setOpen] = useState(false);
+  // const [accno, setAccno] = useState();
+  // const [amount, setAmount] = useState();
   const [data, setData] = useState({ amount: "", accno: "" });
   const [trandata, setTransdata] = useState({
     recieveracc: "",
     senderacc: "",
     amount: "",
   });
+  
 
-  const API = axios.create({ baseURL: "http://localhost:8082/api" });
+  const API = axios.create({baseURL:"https://banking-app-backend-seven.vercel.app/api"});
+  
 
   const fetchdetails = () => API.get("/details");
 
@@ -25,6 +29,7 @@ const Viewallcustomers = () => {
     try {
       const { data } = await fetchdetails();
       setUsers(data);
+  
     } catch (rishav) {
       console.log(rishav);
     }
@@ -32,7 +37,7 @@ const Viewallcustomers = () => {
 
   useEffect(() => {
     omkidetails();
-  }, []);
+  });
 
   const createTransaction = async (senderacc, trandata) => {
     try {
@@ -63,6 +68,8 @@ const Viewallcustomers = () => {
     setTransdata({ recieveracc: "", senderacc: "", amount: "" });
   };
 
+ 
+
   return (
     <div className="content">
       <Navbar />
@@ -73,7 +80,7 @@ const Viewallcustomers = () => {
           <h1 className="heading">All Customers</h1>
           <hr />
         </div>
-        <div className="scroll">
+        <div className="overflow-auto">
           <table className="table table-dark table-striped">
             <thead>
               <tr>
@@ -113,7 +120,7 @@ const Viewallcustomers = () => {
                         aria-labelledby="dropdownMenuButton1"
                       >
                         <li>
-                          <div>Reciever A/c</div>
+                            <div>Reciever A/c</div>
                           <input
                             type="text"
                             value={data.accno}
@@ -131,7 +138,7 @@ const Viewallcustomers = () => {
                           />
                         </li>
                         <li>
-                          <div>Amount</div>
+                            <div>Amount</div>
                           <input
                             type="text"
                             value={data.amount}
@@ -146,7 +153,7 @@ const Viewallcustomers = () => {
                             id="exampleInputPassword1"
                           />
                         </li>
-                        <li style={{ marginLeft: "55px", marginTop: "10px" }}>
+                        <li style={{marginLeft:"55px", marginTop:"10px"}}>
                           <button
                             type="button"
                             id="mani"
