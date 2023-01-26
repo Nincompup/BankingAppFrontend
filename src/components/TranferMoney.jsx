@@ -9,7 +9,7 @@ const TranferMoney = () => {
     senderacc: "",
     amount: "",
   });
-  const API = axios.create({ baseURL: "http://localhost:8082/api" });
+  const API = axios.create({baseURL:"https://banking-app-backend-9ac4tbj37-nincompup.vercel.app/api"});
 
   const createTransaction = async (senderacc, trandata) => {
     try {

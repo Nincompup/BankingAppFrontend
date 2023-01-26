@@ -16,7 +16,7 @@ import Navbar from './Navbar';
 const Home = () => {
     const [users,setUsers]=useState([]);
 
-    const API = axios.create({baseURL:"http://localhost:8082/api"});
+    const API = axios.create({baseURL:"https://banking-app-backend-9ac4tbj37-nincompup.vercel.app/api"});
 
     const fetchdetails=()=>API.get("/details");
    
