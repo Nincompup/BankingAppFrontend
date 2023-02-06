@@ -14,7 +14,8 @@ const TranferMoney = () => {
   const createTransaction = async (senderacc, trandata) => {
     try {
       const newtrans = await API.post(
-        `/details/transactions/${senderacc}`,
+        `/details/transactions/${senderacc
+        }`,
         trandata
       );
       console.log(newtrans);
@@ -63,6 +64,7 @@ const TranferMoney = () => {
                 onChange={(e) => {
                   setData({ ...data, senderacc: e.target.value });
                 }}
+                
                 type="text"
                 name=""
                 required=""
