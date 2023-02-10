@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import "./css/allcustomers.css";
 
 import Navbar from "./Navbar";
+import { createTransaction, omkidetails, TransfferMoney } from "../action";
+import { createtransaction } from "../api";
 
 
 const Viewallcustomers = () => {
@@ -19,51 +21,54 @@ const Viewallcustomers = () => {
     amount: "",
   });
   
-  const API = axios.create({baseURL:"https://banking-app-backend-9ac4tbj37-nincompup.vercel.app/api"});
-
+  // const API = axios.create({baseURL:"https://cbankindia.onrender.com/api"});
   
 
-  const fetchdetails = () => API.get("/details");
+  // const fetchdetails = () => API.get("/details");
 
-  const omkidetails = async () => {
-    try {
-      const { data } = await fetchdetails();
-      setUsers(data);
+  // const omkidetails = async () => {
+  //   try {
+  //     const { data } = await fetchdetails();
+  //     setUsers(data);
   
-    } catch (rishav) {
-      console.log(rishav);
-    }
-  };
+  //   } catch (rishav) {
+  //     console.log(rishav);
+  //   }
+  // };
 
-  // useEffect(() => {
-  //   omkidetails();
-  // });
-    omkidetails();
+  useEffect(() => {
+    const  func=async()=>{
+        const data=await omkidetails();
+        setUsers(data);
+    }
+    return func;
+  });
+    // omkidetails();
 
-  const createTransaction = async (senderacc, trandata) => {
-    try {
-      const newtrans = await API.post(
-        `/details/transactions/${senderacc}`,
-        trandata
-      );
-      console.log(newtrans);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  const TransferMoney = async (id, data) => {
-    try {
-      const msg = await API.patch(`/details/${id}/${data.accno}`, data);
-      alert(msg.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const createTransaction = async (senderacc, trandata) => {
+  //   try {
+  //     const newtrans = await API.post(
+  //       `/details/transactions/${senderacc}`,
+  //       trandata
+  //     );
+  //     console.log(newtrans);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+  // const TransferMoney = async (id, data) => {
+  //   try {
+  //     const msg = await API.patch(`/details/${id}/${data.accno}`, data);
+  //     alert(msg.data);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   const HandleSubmit = (acc) => {
-    TransferMoney(acc, data);
+    TransfferMoney(acc, data);
     console.log(trandata);
-    createTransaction(acc, trandata);
+    createtransaction(acc, trandata);
     console.log(acc);
     setData({ amount: "", accno: "" });
     setTransdata({ recieveracc: "", senderacc: "", amount: "" });

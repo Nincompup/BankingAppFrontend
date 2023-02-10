@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./css/allcustomers.css";
 import Navbar from "./Navbar";
+import { createTransaction, TransfferMoney } from "../action";
 
 const TranferMoney = () => {
   const [data, setData] = useState({
@@ -9,32 +10,7 @@ const TranferMoney = () => {
     senderacc: "",
     amount: "",
   });
-  const API = axios.create({baseURL:"https://banking-app-backend-9ac4tbj37-nincompup.vercel.app/api"});
-
-  const createTransaction = async (senderacc, trandata) => {
-    try {
-      const newtrans = await API.post(
-        `/details/transactions/${senderacc
-        }`,
-        trandata
-      );
-      console.log(newtrans);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const TransfferMoney = async (data) => {
-    try {
-      const msg = await API.patch(
-        `/details/${data.senderacc}/${data.recieveracc}`,
-        data
-      );
-      alert(msg.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  
 
   const HandleSubmit = async () => {
     TransfferMoney(data);
@@ -64,7 +40,7 @@ const TranferMoney = () => {
                 onChange={(e) => {
                   setData({ ...data, senderacc: e.target.value });
                 }}
-                
+
                 type="text"
                 name=""
                 required=""

@@ -2,28 +2,21 @@ import React, { useState,useEffect } from 'react'
 import axios from 'axios';
 import Navbar from './Navbar';
 import moment from 'moment';
+import { TransactionDetails } from '../action';
 
 const Transactions = () => {
     const [trans,setTrans] = useState([]);
 
     
-    const API = axios.create({baseURL:"https://banking-app-backend-9ac4tbj37-nincompup.vercel.app/api"});
-
-    const fetchdetails = () => API.get("/details/transactions");
+    
   
-    const TransactionDetails = async () => {
-      try {
-        const { data } = await fetchdetails();
-        setTrans(data);
-        //    console.log("hello");
-        //    console.log(data);
-      } catch (rishav) {
-        console.log(rishav);
-      }
-    };
   
     useEffect(() => {
-      TransactionDetails();
+      const func=async()=>{
+        const data=await TransactionDetails();
+        setTrans(data);
+      }
+      return func;
     });
 
 
@@ -48,7 +41,7 @@ const Transactions = () => {
               </tr>
             </thead>
             <tbody>
-              {trans.sort((a,b) => a.doneat>b.doneat? -1:1).map((user) => (
+              {trans?.sort((a,b) => a.doneat>b.doneat? -1:1).map((user) => (
                 <tr key={user._id}>
                   <td>{user.senderacc}</td>
                   <td>{user.recieveracc}</td>

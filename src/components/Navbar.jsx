@@ -4,12 +4,14 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <div>
-      <nav className="navbar navbar-expand-lg navbar-light shadow-5-strong stroke">
+       <nav style={{position: "sticky"}}  className="navbar navbar-expand-lg navbar-light shadow-5-strong stroke">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
             {" "}
+            <Link to="/" className="nav-link" aria-current="page">
+                
             <i className="fa-solid fa-sack-dollar "></i> CBI
+                </Link>
           </a>
           <button
             className="navbar-toggler"
@@ -69,7 +71,7 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-    </div>
+    
   );
 };
 

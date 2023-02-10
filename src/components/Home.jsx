@@ -1,7 +1,8 @@
 import React from 'react'
 // import {Link} from 'react-router-dom';
-import './css/style.css'
-import axios from 'axios';
+// import styles from './css/style.css';
+import './css/style.css';
+
 import bank6 from './images/bank6.jpg';
 import bank7 from './images/bank7.png';
 import bank1me from './images/bank1me.png';
@@ -11,36 +12,26 @@ import bank1me from './images/bank1me.png';
 
 
 import { useState,useEffect } from 'react';
+import {omkidetails} from '../action/index'
 import Navbar from './Navbar';
 
 const Home = () => {
     const [users,setUsers]=useState([]);
 
-    const API = axios.create({baseURL:"https://banking-app-backend-9ac4tbj37-nincompup.vercel.app/api"});
-
-    const fetchdetails=()=>API.get("/details");
-   
-    const omkidetails=async()=>{
-       try{
-           const {data}=await fetchdetails();
-           setUsers(data);
-
-       }
-       catch(rishav){
-           console.log(rishav);
-       }
-    }
-
+    
+       
+ 
     useEffect(() => {
-        
-        omkidetails();
-    })
+       const data=omkidetails(); 
+   setUsers(data);
+    },[])
 
     console.log(users)
 
   return (
    <>
           <div className="content">
+   <div>
             <div className="bg--overlay"></div>
          
 
@@ -52,55 +43,31 @@ const Home = () => {
               <div className="row">
                   <div className="">
                       <div className="row">
-                          <div className=" mhl col-md-5 col-12 ">
+                          <div className="col-md-4 col-12 mhr">
+                          </div>
+                          {/* <div className="col-md-2 col-12"></div> */}
+                          <div className=" mhl col-md-8 col-12 ">
                               <p className="para2">Welcome to <span> Central Bank Of India </span></p>
                               <h3 className="headin">A Giant Leap Towards  Ultimate Banking </h3>
 
-                          </div>
-                          <div className="col-md-2 col-12"></div>
-                          <div className="col-md-5 col-12 mhr">
-                              <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
-                                  <div className="carousel-inner">
-                                      <div className="carousel-item active">
-                                          <div className="d-flex justify-content-center">
-                                              <img src={bank1me} className="main--img w-75" alt="..."/>
-                                              </div>
-                                      </div>
-                                      <div className="carousel-item">
-                                          <div className="d-flex justify-content-center">
-                                              <img src={bank6} className="main--img w-75" alt="..."/>
-                                              </div>
-                                      </div>
-                                      <div className="carousel-item">
-                                          <div className="d-flex justify-content-center">
-                                              <img src={bank7} className="main--img w-75" alt="..."/>
-                                              </div>
-                                      </div>
-                                  </div>
-                                  <button className="carousel-control-prev " type="button" data-bs-target="#carouselExampleControls"
-                                      data-bs-slide="prev">
-                                      <span className="carousel-control-prev-icon " aria-hidden="true"></span>
-                                      <span className="visually-hidden ">Previous</span>
-                                  </button>
-                                  <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-                                      data-bs-slide="next">
-                                      <span className="carousel-control-next-icon " aria-hidden="true"></span>
-                                      <span className="visually-hidden">Next</span>
-                                  </button>
-                              </div>
+                     
                           </div>
                       </div>
                   </div>
               </div>
           </div>
 
+</div>
+</div>
+<div className="section-2">
           {/* < />!-- features content starts  --> */}
+          <div className="after-content">
 
-          <div className="container-fluid features">
               <div className="head">
-        
+                 <h1>Features</h1>
                   <hr/>
                   </div>
+          <div className="container-fluid features">
 
             
 
@@ -141,9 +108,20 @@ const Home = () => {
     
 
    {/* footer starts  */}
+   <footer class="white-section" id="footer">
+    <div class="container-fluid">
+      
+      <a href="https://twitter.com/_Om_Lokhande_"><i class="fa-brands fa-twitter footer-img"></i></a>
+      <a href="/"><i class="fa-brands fa-facebook footer-img"></i></a>
+      <a href="https://www.instagram.com/_lokhandeom07_/"><i class="fa-brands fa-instagram footer-img"></i></a>
+      <a href="/"><i class="fa-regular fa-envelope footer-img"></i></a>
+      <p class="footer-text">© Copyright CBI</p>
+  {/* <p id="footer">Created By Om Lokhande</p> */}
+    </div>
+  </footer>
 
-  <p id="footer">Created By Om Lokhande</p>
   
+  </div>
   </div>
         </>  
     )
