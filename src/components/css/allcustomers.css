@@ -16,7 +16,12 @@ flex-direction: column;
   border-radius: 10px;
   margin-top: 19rem;
 }
-
+.table-cont{
+  margin-top:3rem !important;
+}
+.headerclass{
+  margin-top:3rem
+}
 .login-box h3 {
   margin: 0 0 50px 0;
   font-size: 1.5rem;
@@ -138,6 +143,9 @@ flex-direction: column;
   margin-right: 50px;
   font-weight: bolder;
 }
+.navbar-toggler-icon{
+  color: white !important;
+}
 .navbar {
   margin: 0.3rem;
   padding-top: 10px;
@@ -178,12 +186,13 @@ flex-direction: column;
   font-weight: bold;
   text-align: center;
   text-shadow: 0.5rem 0.5rem 0.5rem rgba(21, 2, 2, 0.4);
-  background: whitesmoke;
   padding: 10px 10px;
-  mix-blend-mode: screen;
+  mix-blend-mode: screen !important;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
-    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  background: whitesmoke;
 }
+
 
 nav.stroke ul li a,
 nav.fill ul li a {
@@ -218,7 +227,7 @@ table {
 }
 
 .aboutbox {
-  width: 50%;
+  /* width: 50%; */
   margin-top: 3rem;
 
   color: white;
@@ -276,6 +285,18 @@ footer p {
   line-height: 2rem;
   font-size: 0.7rem;
 }
+
+@media screen and (min-width: 992px) {
+  .aboutbox{
+    width: 50%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .aboutbox{
+    width: 80%;
+  }
+}
+
 
 @keyframes btn-anim4 {
   0% {

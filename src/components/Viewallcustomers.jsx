@@ -7,63 +7,23 @@ import Navbar from "./Navbar";
 import { createTransaction, omkidetails, TransfferMoney } from "../action";
 import { createtransaction } from "../api";
 
-
 const Viewallcustomers = () => {
-  
   const [users, setUsers] = useState([]);
-  // const [open, setOpen] = useState(false);
-  // const [accno, setAccno] = useState();
-  // const [amount, setAmount] = useState();
+
   const [data, setData] = useState({ amount: "", accno: "" });
   const [trandata, setTransdata] = useState({
     recieveracc: "",
     senderacc: "",
     amount: "",
   });
-  
-  // const API = axios.create({baseURL:"https://cbankindia.onrender.com/api"});
-  
-
-  // const fetchdetails = () => API.get("/details");
-
-  // const omkidetails = async () => {
-  //   try {
-  //     const { data } = await fetchdetails();
-  //     setUsers(data);
-  
-  //   } catch (rishav) {
-  //     console.log(rishav);
-  //   }
-  // };
 
   useEffect(() => {
-    const  func=async()=>{
-        const data=await omkidetails();
-        setUsers(data);
-    }
+    const func = async () => {
+      const data = await omkidetails();
+      setUsers(data);
+    };
     return func;
   });
-    // omkidetails();
-
-  // const createTransaction = async (senderacc, trandata) => {
-  //   try {
-  //     const newtrans = await API.post(
-  //       `/details/transactions/${senderacc}`,
-  //       trandata
-  //     );
-  //     console.log(newtrans);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-  // const TransferMoney = async (id, data) => {
-  //   try {
-  //     const msg = await API.patch(`/details/${id}/${data.accno}`, data);
-  //     alert(msg.data);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
 
   const HandleSubmit = (acc) => {
     TransfferMoney(acc, data);
@@ -74,19 +34,15 @@ const Viewallcustomers = () => {
     setTransdata({ recieveracc: "", senderacc: "", amount: "" });
   };
 
- 
-
   return (
     <div className="content">
       <Navbar />
-      {/* <!-- main content  --> */}
 
       <div className="container-fluid">
-        <div>
+        <div className="headerclass">
           <h1 className="heading">All Customers</h1>
-          <hr />
         </div>
-        <div className="overflow-auto">
+        <div className="table-cont overflow-auto">
           <table className="table table-dark table-striped">
             <thead>
               <tr>
@@ -126,7 +82,7 @@ const Viewallcustomers = () => {
                         aria-labelledby="dropdownMenuButton1"
                       >
                         <li>
-                            <div>Reciever A/c</div>
+                          <div>Reciever A/c</div>
                           <input
                             type="text"
                             value={data.accno}
@@ -144,7 +100,7 @@ const Viewallcustomers = () => {
                           />
                         </li>
                         <li>
-                            <div>Amount</div>
+                          <div>Amount</div>
                           <input
                             type="text"
                             value={data.amount}
@@ -159,7 +115,7 @@ const Viewallcustomers = () => {
                             id="exampleInputPassword1"
                           />
                         </li>
-                        <li style={{marginLeft:"55px", marginTop:"10px"}}>
+                        <li style={{ marginLeft: "55px", marginTop: "10px" }}>
                           <button
                             type="button"
                             id="mani"

@@ -2,6 +2,7 @@ import React from 'react'
 // import {Link} from 'react-router-dom';
 // import styles from './css/style.css';
 import './css/style.css';
+import SplitType from 'split-type'
 
 import bank6 from './images/bank6.jpg';
 import bank7 from './images/bank7.png';
@@ -14,6 +15,7 @@ import bank1me from './images/bank1me.png';
 import { useState,useEffect } from 'react';
 import {omkidetails} from '../action/index'
 import Navbar from './Navbar';
+import { gsap } from "gsap";
 
 const Home = () => {
     const [users,setUsers]=useState([]);
@@ -26,7 +28,16 @@ const Home = () => {
    setUsers(data);
     },[])
 
-    console.log(users)
+    // console.log(users)
+
+    const myText = new SplitType('#my-text')
+
+    gsap.to('.char', {
+        y: 0,
+        stagger: 0.05,
+        delay: 0.2,
+        duration: .1
+    })
 
   return (
    <>
@@ -43,13 +54,14 @@ const Home = () => {
               <div className="row">
                   <div className="">
                       <div className="row">
-                          <div className="col-md-4 col-12 mhr">
-                          </div>
+                          {/* <div className="col-md-2 col-12 mhr">
+                          </div> */}
                           {/* <div className="col-md-2 col-12"></div> */}
-                          <div className=" mhl col-md-8 col-12 ">
+                          <div className=" mhl col-md-12 col-12 ">
                               <p className="para2">Welcome to <span> Central Bank Of India </span></p>
-                              <h3 className="headin">A Giant Leap Towards  Ultimate Banking </h3>
-
+                              <header>
+                              <h3 className="headin" id="my-text">A Giant Leap Towards  Ultimate Banking </h3>
+                              </header>
                      
                           </div>
                       </div>

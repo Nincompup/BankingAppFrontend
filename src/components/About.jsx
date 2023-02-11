@@ -7,9 +7,8 @@ const About = () => {
     <div className="content">
       <Navbar />
       <div className="container-fluid">
-        <div>
+        <div className="headerclass">
           <h1 className="heading">About Us</h1>
-          <hr />
         </div>
         <div className="container aboutbox">
           <h1 className="who">Who we are</h1>

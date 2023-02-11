@@ -57,8 +57,12 @@ nav.stroke ul li a:hover:after {
   box-shadow: 1px 1px 1px 1px #a9a1a1;
 }
 .navbar-toggler-icon{
- 
- border-radius:2px solid rgb(180, 28, 28);
+ color: white !important;
+ border-radius:2px solid rgb(180, 28, 28) !important;
+}
+.navbar-toggler{
+  border:2px solid grey ;
+
 }
 
 .navbar-brand {
@@ -148,11 +152,14 @@ nav.stroke ul li a:hover:after {
   color: rgb(234, 222, 222);
   text-shadow: 0.5rem 0.5rem 0.5rem rgba(21, 2, 2, 0.4);
   font-weight: bolder;
+  font-size: 3rem;
+  animation: VanishIn 5s;
+
 }
 span {
-  font-family: "Great Vibes", cursive;
-  color: rgb(242, 10, 10);
-  font-size: 1.5rem;
+  font-family: 'Rajdhani', sans-serif;
+  color: rgb(255, 0, 0);
+font-weight: 1300 !important;
 }
 
 .box {
@@ -226,16 +233,20 @@ span {
 }
 .headin {
   font-weight: bold;
-
+  font-size: 4rem !important;
   font-family: "Kaushan Script", cursive;
   text-align: center;
   text-shadow: 0.5rem 0.5rem 0.5rem rgba(21, 2, 2, 0.4);
-  background: whitesmoke;
+  /* background: whitesmoke; */
   padding: 10px 10px;
+  /* color: black; */
+  color: #fff;
 
-  mix-blend-mode: screen;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
-    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  box-shadow: rgba(0, 0, 0, 0.25 ) 0px 14px 28px,
+  rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  /* mix-blend-mode: screen !important; */
+  /* background-color: darkcyan; */
+  mix-blend-mode: multiply;
 }
 hr {
   width: 20% !important;
@@ -257,9 +268,36 @@ hr {
     height: auto;
     margin-top: 3rem;
   }
-
+  
+  
   .navbar-expand-lg .navbar-collapse {
     height: auto !important;
   }
 }
 
+  @keyframes VanishIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+
+header {
+  display: grid;
+  place-content: center;
+  /* height: 100vh; */
+  margin-top: 5rem;
+}
+
+#my-text {
+  /* font-size: 7rem; */
+  /* text-transform: uppercase; */
+  /* font-family: 'Bebas Neue'; */
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  /* line-height: 5.9rem; */
+}
+
+.char {
+  transform: translateY(115px);
+  transition: transform .5s;
+  transition-delay: 1s;
+}

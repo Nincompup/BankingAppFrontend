@@ -25,9 +25,8 @@ const TranferMoney = () => {
       {/* <!-- main content  --> */}
 
       <div className="container-fluid">
-        <div>
+        <div className="headerclass">
           <h1 className="heading">Tranfer Money</h1>
-          <hr />
         </div>
         <div class="login-box">
           <h3 className="havea">
