@@ -154,6 +154,7 @@ nav.stroke ul li a:hover:after {
   font-weight: bolder;
   font-size: 3rem;
   animation: VanishIn 5s;
+  animation-delay: 0s;
 
 }
 span {
@@ -249,14 +250,20 @@ font-weight: 1300 !important;
   mix-blend-mode: multiply;
 }
 hr {
-  width: 20% !important;
-   opacity: 1 !important;
-  height:0px !important;
- border: 1px solid rgb(245, 9, 9) !important;
+  opacity: 1 ;
+  height:0px ;
+  border: 1px solid rgb(245, 9, 9) ;
+  animation-name: extend;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  width: 20% ;
 }
 
 .section-2{
-  margin-top:3rem;
+  padding-top:3rem;
+  background-color: white !important;
 }
 
 @media (max-width: 768px) {
@@ -280,6 +287,15 @@ hr {
     100% { opacity: 1; }
   }
 
+  @keyframes extend {
+    10% {
+      width: 0.5rem;
+    }
+    100% {
+      width: 40% !important;
+    }
+  }
+  
 
 header {
   display: grid;
@@ -299,5 +315,5 @@ header {
 .char {
   transform: translateY(115px);
   transition: transform .5s;
-  transition-delay: 1s;
+  transition-delay: 1.5s;
 }

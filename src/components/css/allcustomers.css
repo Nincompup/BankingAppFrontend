@@ -246,7 +246,7 @@ table {
   font-size: 2rem;
 }
 
-hr {
+/* hr {
   border: none;
   height: 20px;
   width: 50%;
@@ -254,7 +254,7 @@ hr {
   margin-top: 0;
   border-bottom: 2px solid #1f1209;
   box-shadow: 0 20px 20px -20px rgb(17, 1, 1);
-}
+} */
 .scroll {
   margin: 4px, 4px;
   padding: 4px;

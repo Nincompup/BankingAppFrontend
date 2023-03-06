@@ -2,6 +2,7 @@ import React from 'react'
 // import {Link} from 'react-router-dom';
 // import styles from './css/style.css';
 import './css/style.css';
+import AOS from 'aos';
 import SplitType from 'split-type'
 
 import bank6 from './images/bank6.jpg';
@@ -27,10 +28,17 @@ const Home = () => {
        const data=omkidetails(); 
    setUsers(data);
     },[])
+    useEffect(() => {
+        AOS.init();
+      }, []);
 
     // console.log(users)
 
     const myText = new SplitType('#my-text')
+    setTimeout(function() {
+        document.getElementsByClassName('para2').style.display = 'none';
+      }, 5000)
+      
 
     gsap.to('.char', {
         y: 0,
@@ -38,15 +46,23 @@ const Home = () => {
         delay: 0.2,
         duration: .1
     })
+    
+
+
+    
+    
+    
 
   return (
    <>
-          <div className="content">
+          <div className="content">  
+    
+
    <div>
             <div className="bg--overlay"></div>
          
 
-
+       
           <Navbar/>
           {/* < />!-- main header starts --> */}
 
@@ -83,17 +99,34 @@ const Home = () => {
 
             
 
-          <div className="row">
-              <div className="col-lg-4 ">
-                  <div className="card ">
-                      <div className="card-body ">
+          <div className="row" >
+              <div className="col-lg-4 "     data-aos="fade-right"
+    data-aos-offset="-100"
+    data-aos-delay="50"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center"
+ >
+   
+                  <div className="card "  >
+                      <div className="card-body "  >
                           <h5 className="card-title"><i className="fa-solid fa-piggy-bank"></i></h5>
                           <a className="gosome" href="/transactions"  aria-current="page">Transaction History</a>
                           <p className="card-text">Here, you can keep track of transactions done.</p>
                       </div>
                   </div>
               </div>
-              <div className="col-lg-4 ">
+              <div className="col-lg-4 "     data-aos="zoom-in"
+    data-aos-offset="-100"
+    data-aos-delay="50"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center"
+>
                   <div className="card">
                       <div className="card-body">
                           <h5 className="card-title"><i className="fa-solid fa-users"></i></h5>
@@ -103,7 +136,15 @@ const Home = () => {
                       </div>
                   </div>
               </div>
-              <div className="col-lg-4 ">
+              <div className="col-lg-4 "    data-aos="fade-left"
+    data-aos-offset="-100"
+    data-aos-delay="50"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center"
+>
                   <div className="card">
                       <div className="card-body">
                           <h5 className="card-title"><i className="fa-solid fa-comments-dollar"></i></h5>
@@ -120,7 +161,7 @@ const Home = () => {
     
 
    {/* footer starts  */}
-   <footer class="white-section" id="footer">
+   <footer class="white-section" id="footer" >
     <div class="container-fluid">
       
       <a href="https://twitter.com/_Om_Lokhande_"><i class="fa-brands fa-twitter footer-img"></i></a>

@@ -42,7 +42,7 @@ const Viewallcustomers = () => {
         <div className="headerclass">
           <h1 className="heading">All Customers</h1>
         </div>
-        <div className="table-cont overflow-auto">
+        {/* <div className="table-cont overflow-auto">
           <table className="table table-dark table-striped">
             <thead>
               <tr>
@@ -132,6 +132,46 @@ const Viewallcustomers = () => {
               ))}
             </tbody>
           </table>
+        </div> */}
+        <div className="container">
+        <div class="container cardcont">
+  <div class="cardcc card0">
+    <div class="bordercc">
+      <h2>Al Pacino</h2>
+      <div class="icons">
+        <i class="fa fa-codepen" aria-hidden="true"></i>
+        <i class="fa fa-instagram" aria-hidden="true"></i>
+        <i class="fa fa-dribbble" aria-hidden="true"></i>
+        <i class="fa fa-twitter" aria-hidden="true"></i>
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+      </div>
+    </div>
+  </div>
+  <div class="cardcc card1cc">
+    <div class="bordercc">
+      <h2>Ben Stiller</h2>
+      <div class="icons">
+        <i class="fa fa-codepen" aria-hidden="true"></i>
+        <i class="fa fa-instagram" aria-hidden="true"></i>
+        <i class="fa fa-dribbble" aria-hidden="true"></i>
+        <i class="fa fa-twitter" aria-hidden="true"></i>
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+      </div>
+    </div>
+  </div>
+  <div class="cardcc card2cc">
+    <div class="border">
+      <h2>Patrick Stewart</h2>
+      <div class="icons">
+        <i class="fa fa-codepen" aria-hidden="true"></i>
+        <i class="fa fa-instagram" aria-hidden="true"></i>
+        <i class="fa fa-dribbble" aria-hidden="true"></i>
+        <i class="fa fa-twitter" aria-hidden="true"></i>
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+      </div>
+    </div>
+  </div>
+</div>
         </div>
       </div>
 
