@@ -47,7 +47,10 @@ let i=0;
           <h1 className="heading">All Customers</h1>
         </div>
       
-      
+       
+
+
+
        <div class="container cont1">
       
          <div className="row">

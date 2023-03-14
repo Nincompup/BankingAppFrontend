@@ -17,7 +17,10 @@ flex-direction: column;
   margin-top: 19rem;
 }
 .table-cont{
-  margin-top:3rem !important;
+  margin-top:1rem !important;
+}
+.row{
+  margin-top: 2rem;
 }
 .headerclass{
   margin-top:3rem
@@ -369,6 +372,7 @@ footer p {
 }
 .border1:hover {
   border: 1px solid white;
+  cursor: pointer;
 }
 
 
