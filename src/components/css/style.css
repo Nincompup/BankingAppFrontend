@@ -193,6 +193,7 @@ font-weight: 1300 !important;
   font-size: 3vw;
   text-align: center;  
   margin-top: auto;
+  opacity: 1;
 }
 #footer .container {
   width: 100%;

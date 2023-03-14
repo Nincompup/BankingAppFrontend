@@ -337,3 +337,98 @@ footer p {
     left: 100%;
   }
 }
+
+
+/* view all customers css  */
+
+/* .cont1 {
+  height: 100vh;
+  width: 100vw;
+  max-height: 800px;
+  max-width: 1280px;
+  min-height: 600px;
+  min-width: 1000px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+} */
+.row{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.border1 {
+  height: 369px;
+  width: 290px;
+  background: transparent;
+  border-radius: 10px;
+  transition: border 1s;
+  position: relative;
+}
+.border1:hover {
+  border: 1px solid white;
+}
+
+
+
+
+
+.card1 {
+  background: url("../images/bwom.jpg") center top no-repeat;
+  background-size: 300px;
+}
+.card1:hover {
+  background: url("../images/bwom.jpg") center top no-repeat;
+  background-size: 600px;
+}
+.card1:hover h2 {
+  opacity: 1;
+}
+.card1:hover .fa {
+  opacity: 1;
+}
+
+.card2 {
+  background: url("../images/om2.jpg") center top no-repeat;
+  background-size: 300px;
+}
+.card2:hover {
+  background: url("../images/om2.jpg") center top no-repeat;
+  background-size: 600px;
+}
+.card2:hover h2 {
+  opacity: 1;
+}
+.card2:hover .fa {
+  opacity: 1;
+}
+
+.h2per {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: white;
+  margin: 20px;
+  /* margin-left: 1000px; */
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.fa {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.iconss {
+  position: absolute;
+  fill: #fff;
+  color: #fff;
+  height: 130px;
+  top: 226px;
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-left: 10px;
+}

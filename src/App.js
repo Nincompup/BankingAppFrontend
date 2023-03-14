@@ -47,4 +47,15 @@ function App() {
   );
 }
 
+
+// function App() {
+//   const obj={name:'om',lname:'lokhande'}
+//   return(
+//     <div className="App">
+//    <p>{obj.lname}</p>
+//    <p>hello</p>
+//     </div>
+//   )
+// }
+
 export default App;
