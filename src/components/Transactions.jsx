@@ -39,7 +39,7 @@ const Transactions = () => {
                   <tr key={user._id}>
                     <td>{user.senderacc}</td>
                     <td>{user.recieveracc}</td>
-                    <td>Rs.{user.amount}</td>
+                    <td> &#x20b9;  {user.amount}</td>
                     <td>{moment(user.doneat).fromNow()}</td>
                   </tr>
                 ))}

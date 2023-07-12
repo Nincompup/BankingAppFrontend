@@ -28,7 +28,7 @@ export const omkidetails=async()=>{
   export const TransfferMoney = async (data) => {
     try {
       const msg = await api.transfermoney(data.senderacc,data.recieveracc,data);
-      alert(msg.data);
+      return msg.data;
     } catch (error) {
       console.log(error);
     }
@@ -44,3 +44,5 @@ export const omkidetails=async()=>{
       console.log(rishav);
     }
   };
+
+  
