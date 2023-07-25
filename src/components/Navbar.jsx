@@ -5,7 +5,6 @@ import { AuthContext } from "../context/authcontext";
 
 const Navbar = () => {
 
-  const token=useRouteLoaderData();
   const {currentUser,logout}=useContext(AuthContext);
   const navigate=useNavigate();
 
@@ -35,12 +34,12 @@ const Navbar = () => {
             id="navbarNav"
           >
             <ul className="navbar-nav mr-auto">
-             {token && <li className="nav-item rem-item">
+             {currentUser!==null && <li className="nav-item rem-item">
                 <Link to="/" className="nav-link" aria-current="page">
                   Home
                 </Link>
               </li>}
-              <li className="nav-item rem-item">
+              {currentUser!==null &&  <li className="nav-item rem-item">
                 <Link
                   to="/transfermoney"
                   className="nav-link"
@@ -48,7 +47,8 @@ const Navbar = () => {
                 >
                   Transfer Money
                 </Link>
-              </li>
+              </li>}
+              {currentUser!==null && 
               <li className="nav-item rem-item">
                 <Link
                   to="/viewallcustomers"
@@ -57,7 +57,8 @@ const Navbar = () => {
                 >
                   View All Customers
                 </Link>
-              </li>
+              </li>}
+              {currentUser!==null && 
               <li className="nav-item rem-item">
                 <Link
                   to="/transactions"
@@ -66,13 +67,14 @@ const Navbar = () => {
                 >
                   Transactions
                 </Link>
-              </li>
+              </li>}
+              {currentUser!==null && 
 
               <li className="nav-item ">
                 <Link to="/about" className="nav-link" aria-current="page">
                   About Us
                 </Link>
-              </li>
+              </li>}
               {currentUser===null &&<li className="nav-item ">
                 <Link to="/login" className="nav-link" aria-current="page">
                  Login

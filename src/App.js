@@ -14,6 +14,7 @@ import About from "./components/About";
 import PreLoader from "./components/PreLoader";
 import Login from "./auth/login/Login"
 import Signup from "./auth/signup/Signup"
+import SignupAdmin from "./auth/signup/SignupAdmin"
 import Authentication , {action as authAction} from "./components/Authentication";
 import {action as LogoutAction} from "./components/Logout"
 import {checkAuthLoader, tokenLoader} from "./components/util/Auth"
@@ -33,8 +34,9 @@ function App() {
     { path: "/viewallcustomers", element: <Viewallcustomers /> },
     { path: "/transactions", element: <Transactions /> },
     // { path: "/auth", element: <Authentication/>,action:authAction},
-    { path:"/login",element: <Login/>},
-    { path:"/signup",element: <Signup/>},
+    { path:"/admin/login",element: <Login/>},
+    { path:"/admin/register",element: <SignupAdmin />},
+    { path:"/user/register",element: <Signup/>},
     { path: "/transfermoney", element: <TranferMoney /> },
     { path: "/about", element: <About /> },
     { path: "/logout", action:LogoutAction},

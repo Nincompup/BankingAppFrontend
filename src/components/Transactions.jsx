@@ -13,7 +13,7 @@ const Transactions = () => {
       setTrans(data);
     };
     return func;
-  });
+  },[]);
 
   return (
     <div className="content">

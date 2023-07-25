@@ -2,10 +2,10 @@ import React, { useContext, useState } from 'react'
 import InputControl from "../Input";
 import styles from "./signup.module.css";
 import { Link, useNavigate } from 'react-router-dom';
-import { registeruser } from '../../action/auth';
+import { registeradmin } from '../../action/auth';
 import { AuthContext } from '../../context/authcontext';
 
-const Signup = () => {
+const SignupAdmin = () => {
     const navigate = useNavigate();
     const {currentUser,loginn}=useContext(AuthContext);
 
@@ -13,7 +13,6 @@ const Signup = () => {
         name: "",
         email: "",
         password: "",
-        accno:"",
       });
     const [errorMsg, setErrorMsg] = useState(""); 
     const [submitButtonDisabled, setSubmitButtonDisabled] = useState(false);
@@ -42,7 +41,7 @@ const Signup = () => {
     //   };
 
     const handleSubmission =async()=>{
-        const data=await registeruser(values,navigate);
+        const data=await registeradmin(values,navigate);
         console.log(data);
         await loginn(data);
         console.log(currentUser)
@@ -78,20 +77,13 @@ const Signup = () => {
           }
           placeholder="Enter Password"
         />
-        <InputControl
-          label="Account Number"
-          onChange={(event) =>
-            setValues((prev) => ({ ...prev, accno: event.target.value }))
-          }
-          placeholder="Enter Account Number"
-        />
+       
 
 <div className={styles.footer}>
           <b className={styles.error}>{errorMsg}</b>
           <button onClick={handleSubmission} disabled={submitButtonDisabled}>
             Signup
           </button>
-        
         </div>
 
    </div>
@@ -99,4 +91,4 @@ const Signup = () => {
   )
 }
 
-export default Signup
+export default SignupAdmin

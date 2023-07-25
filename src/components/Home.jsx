@@ -119,7 +119,7 @@ const Home = () => {
                   </div>
               </div>
               <div className="col-lg-4 "     data-aos="zoom-in"
-    data-aos-offset="-100"
+    data-aos-offset="-200"
     data-aos-delay="50"
     data-aos-duration="1000"
     data-aos-easing="ease-in-out"

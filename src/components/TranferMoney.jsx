@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import axios from "axios";
 import "./css/allcustomers.css";
 import Navbar from "./Navbar";
 import { createTransaction, TransfferMoney } from "../action";
+import { AuthContext } from "../context/authcontext";
 
 const TranferMoney = () => {
   const [data, setData] = useState({
@@ -11,11 +12,18 @@ const TranferMoney = () => {
     amount: "",
   });
   
+  const currentUser=useContext(AuthContext);
+
 
   const HandleSubmit = async () => {
+    if(currentUser.balance>=data.amount){
     TransfferMoney(data);
     createTransaction(data.senderacc, data);
     setData({ recieveracc: "", senderacc: "", amount: "" });
+    }
+    else{
+      alert("Insufficient balance !")
+    }
   };
 
   return (
